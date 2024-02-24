@@ -12,7 +12,7 @@ NLP involves the development of algorithms and models to enable computers to und
 Collection of complaints about financial products and services. Dataset has 18 columns and millions of records. There are 21 product and service labels. For our analysis we will be using a reduced dataset of around 200k records. We plan to use around 10k rows from each category to avoid class imbalance.
 
 ## Problem Definition
-Customer issue resolution is one of the most important facets in running a smooth business operation and providing satisfactory services.  One of the biggest bottlenecks is identification and tagging of complaints to respective products/services. We can employ NLP techniques to parse complaint text and classify which product the complaint corresponds to which automates the tagging process, thus reducing the need for human intervention and automating the process to decrease complaint resolution time.
+Customer issue resolution is one of the most important facets in running a smooth business operation and providing satisfactory services.  One of the biggest bottlenecks is identification and tagging of complaints to respective products/services. We can employ NLP techniques to parse complaint text and classify which product the complaint corresponds to, which automates the tagging process, thus reducing the need for human intervention and decreasing complaint resolution time.
 
 ## Methods
 
@@ -27,7 +27,7 @@ These supervised models are well-suited for text classification tasks, offering 
 - Support Vector Machine (scikit-learn's SVC)
 - XGBoost (xgboost library)
 
-Additionally, unsupervised methods are employed to identify latent topics and group similar complaints without the need for labeled data.
+Additionally, the following unsupervised methods are employed to identify latent topics and group similar complaints without the need for labeled data:
 - Latent Dirichlet Allocation (scikit-learn's LDA)
 - Clustering (scikit-learn's KMeans) 
 
