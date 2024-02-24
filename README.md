@@ -57,3 +57,9 @@ Additionally, the following unsupervised methods are employed to identify latent
 | Harshit Alluri    | Github Page |
 | Jyothsna Karanam    | Methods, Results and Discussion  |
 | Nikita Agrawal    | Powerpoint Presentation |
+
+
+## Gantt Chart
+![GanttChart](https://github.com/ahv15/ProjectProposal/assets/52852877/3e26cf00-b6f4-4e1a-aa1c-830bc0cafb4c)
+
+
