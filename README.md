@@ -48,4 +48,12 @@ Additionally, the following unsupervised methods are employed to identify latent
 4. I.-C. Chang, T. Yu, Y. Chang, and T. Yu, “Applying text mining, clustering analysis, and latent dirichlet allocation techniques for topic classification of environmental education journals,” Sustainability, vol. 13, no. 19, p. 10856, Sep. 2021, doi: 10.3390/su131910856
 
  
+## Contribution Table
 
+| Name    | Proposal Contributions |
+|---------|------------------------|
+| Divyansh Verma | Introduction and Problem Definition |
+| Rajani Goudar | Slides and Video Creation |
+| Harshit Alluri    | Github Page |
+| Jyothsna Karanam    | Methods, Results and Discussion  |
+| Nikita Agrawal    | Slides and Video Creation|
