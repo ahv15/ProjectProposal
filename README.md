@@ -17,10 +17,10 @@ Customer issue resolution is one of the most important facets in running a smoot
 ## Methods
 
 ### Data Preprocessing Methods
-1. Tokenization (NLTK's word_tokenize): For efficient segmentation of complaint text into tokens.
-2. Stemming/Lemmatization (NLTK's PorterStemmer/WordNetLemmatizer): To normalize words and reduce dimensionality.
-3. Part-of-speech tagging (NLTK's pos_tag function): To identify the grammatical components of each token.
-4. Stopword and Duplicate Word Removal: They will be removed using NLTK's built-in stopwords list and Python's set operations.
+- Tokenization (NLTK's word_tokenize): For efficient segmentation of complaint text into tokens.
+- Stemming/Lemmatization (NLTK's PorterStemmer/WordNetLemmatizer): To normalize words and reduce dimensionality.
+- Part-of-speech tagging (NLTK's pos_tag function): To identify the grammatical components of each token.
+- Stopword and Duplicate Word Removal: They will be removed using NLTK's built-in stopwords list and Python's set operations.
 
 ### Machine Learning Models
 These supervised models are well-suited for text classification tasks, offering high accuracy and robustness:
