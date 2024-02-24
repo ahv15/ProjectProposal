@@ -53,7 +53,7 @@ Additionally, the following unsupervised methods are employed to identify latent
 | Name    | Proposal Contributions |
 |---------|------------------------|
 | Divyansh Verma | Introduction and Problem Definition |
-| Rajani Goudar | Slides and Video Creation |
+| Rajani Goudar | Video Recording |
 | Harshit Alluri    | Github Page |
 | Jyothsna Karanam    | Methods, Results and Discussion  |
-| Nikita Agrawal    | Slides and Video Creation|
+| Nikita Agrawal    | Powerpoint Presentation |
