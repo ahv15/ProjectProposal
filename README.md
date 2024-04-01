@@ -17,12 +17,28 @@ Customer issue resolution is one of the most important facets in running a smoot
 ## Methods
 
 ### Data Preprocessing Methods
-- Tokenization (NLTK's word_tokenize): For efficient segmentation of complaint text into tokens.
-- Stemming/Lemmatization (NLTK's PorterStemmer/WordNetLemmatizer): To normalize words and reduce dimensionality.
-- Part-of-speech tagging (NLTK's pos_tag function): To identify the grammatical components of each token.
-- Stopword and Duplicate Word Removal: They will be removed using NLTK's built-in stopwords list and Python's set operations.
 
-### Machine Learning Models
+#### Common preprocessing pipeline:
+- Tokenization (NLTK's word_tokenize): For efficient segmentation of complaint text into tokens.
+- Stopword and Duplicate Word Removal: They will be removed using NLTK's built-in stopwords list and Python's set operations.
+- Lemmatization (NLTK's WordNetLemmatizer): To normalize words and reduce dimensionality.
+- Part-of-speech tagging (NLTK's pos_tag function): To identify the grammatical components of each token.
+
+#### Approach 1: Gensim Corpus Creation
+- Creation of corpus dictionary using the preprocessed data from the previous step using corpora.dictionary() where word is mapped to integer ID's
+- Use of corpus dictionary created to create bag-of-words representation in the form of (token_id, token_counts) representation where token_ids are queried from the dictionary.
+- Used this approach to train our LDA __unsupervised__ model.
+
+#### Approach 2: Creating word embeddings using Word2Vec
+- Creates a vector representation in a D dimensional space and similar context words are closer geometrically in the D dimensional hyperspace.
+   - We used the pretrained "word2vec-google-news-300" model that converts a word to 300 dimensionality vectors.
+- A weighted average of each word in an article (customer transcript for our use case) is used to represent the entire article as one 300 dimension vector.
+- Performed Principal Component Analysis to reduce the articles to 2 dimensions only for visualization purposes. 
+- Used this approach for our KMeans __unsupervised__ model. 
+
+### Machine Learning Models Implemented
+
+#### Model 1: Latent Dirichlet Allocation (scikit-learn's LDA)
 These supervised models are well-suited for text classification tasks, offering high accuracy and robustness:
 - Support Vector Machine (scikit-learn's SVC)
 - XGBoost (xgboost library)
@@ -61,5 +77,3 @@ Additionally, the following unsupervised methods are employed to identify latent
 
 ## Gantt Chart
 ![GanttChart](https://github.com/ahv15/ProjectProposal/assets/52852877/3e26cf00-b6f4-4e1a-aa1c-830bc0cafb4c)
-
-
