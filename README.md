@@ -29,70 +29,76 @@ Customer issue resolution is one of the most important facets in running a smoot
 - Use of corpus dictionary created to create bag-of-words representation in the form of (token_id, token_counts) representation where token_ids are queried from the dictionary.
 - Used this approach to train our LDA __unsupervised__ model.
 
-#### Approach 2: Creating word embeddings using Word2Vec
+#### Approach 2: Creating word embeddings using Word2Vec and weighted average using TFIDF scores
 - Creates a vector representation in a D dimensional space and similar context words are closer geometrically in the D dimensional hyperspace.
    - We used the pretrained "word2vec-google-news-300" model that converts a word to 300 dimensionality vectors.
-- A weighted average of each word in an article (customer transcript for our use case) is used to represent the entire article as one 300 dimension vector.
+- A weighted average based on TFIDF score of each word in an article (customer transcript for our use case) is used to represent the entire article as one 300 dimension vector.
 - Performed Principal Component Analysis to reduce the articles to 2 dimensions only for visualization purposes. 
 - Used this approach for our KMeans __unsupervised__ model. 
 
 ### Machine Learning Models Implemented
 
-#### Model 1- Unsupervised Learning: Latent Dirichlet Allocation (scikit-learn's LDA)
+#### Model 1- Supervised Learning: Support Vector Machine (scikit-learn's SVM)
 
-Why LDA?
-- Popular unsupervised model with usually good performance on NLP tasks as seen in our literature analysis on the topic.
-- Computationally efficient and can be scaled to handle billions of documents with minimal processing delay.
-- Can be tailored to a specific corpus and set of topics during the training phase, with little training time and corpora vs LLM.
-- LDA treats the per-document distribution as a latent variable that comes from a Dirichlet distribution allowing inference over a conjugate Dirichlet-Multinomial.
-- LDA can automatically infer the topics from the data, and assign each document a probability of belonging to each topic.
+Why SVM?
+- Popular supervised model with usually good performance on NLP tasks as seen in our literature analysis on the topic.
+- Computationally efficient if using linear kernels and can be scaled to handle billions of documents with minimal processing delay.
+- Performs well for text classification, where the input data is sparse and the feature space is typically high-dimensional.
+- Less prone to overfitting compared to other classification algorithms.
 
-#### Model 2- Unsupervised Learning: K-Means (scikit-learn's KMeans)
+#### Model 2- Supervised Learning: Random Forest (scikit-learn's KMeans)
+
+Why Random Forest?
+- Good for text classification, as it is capable of handling high-dimensional data efficiently and can effectively capture complex (even non-linear) relationships between features and labels.
+- In text classification tasks, where the presence of irrelevant words or misspellings is common, Random Forest can effectively handle noise in the data without significantly impacting its performance.
+- Reduces the risk of overfitting by averaging the predictions of multiple trees. By building multiple trees on random subsets of the data, Random Forest reduces the variance of the model and improves its generalization performance.
+  
+#### Model 3- Supervised Learning: XGBoost (sklearn's XGBClassifier)
+
+Why XGBoost? 
+- asd
+- 
+
+#### Model 4- Unsupervised Learning: KMeans Clustering (sklearn's KMeans)
 
 Why KMeans?
-- Simple unsupervised model that can be used as a baseling to compare the performance of more complicared unsupervised models like LDA.
+- Simple unsupervised model that can be used as a baseline to compare the performance of more complicared unsupervised models like LDA.
 - Low computation time.
-
-#### Model 3- Supervised Learning: <MODEL NAME>
-
-Why <MODEL NAME>?
-
-#### Model 4- Supervised Learning: <MODEL NAME>
-
-Why <MODEL NAME>?
-
-#### Model 5- Supervised Learning: <MODEL NAME>
-
-Why <MODEL NAME>?
 
 ## Results and Discussion
 
-Since the entire dataset is too large, we have limited our models to process and train on a shorter dataset of DATASET_SIZE_NUMBER records. Once we fine tune our approaches and have a solid baseline we plan to expand the model to train on the entire dataset of X_MILLION records for our final phase. 
+Since the entire dataset is too large, we have limited our models to process and train on a shorter dataset of 10000 records of each category. 
 
 ### Model Metrics
 
-#### Model 1
-- Accuracy_Score 1
-- F1_score 1
-- BLAH
+#### Model 1: SVM Classifier
+- Accuracy Score: 63.4%
+- F1 score: 62.6%
+- Precision:
+- Recall:
+
 VISUALIZATIONS
 
-#### Model 2
-- Accuracy_Score 1
-- F1_score 1
-- BLAH
+#### Model 2: Random Forest
+- Accuracy Score: 60.8%
+- F1 score: 59.1%
+- Precision:
+- Recall:
+
 VISUALIZATIONS
 
-#### Model 3
-- Accuracy_Score 1
-- F1_score 1
-- BLAH
+#### Model 3: XGBoost Classifier
+- Accuracy Score: 62.0%
+- F1 score: 61.7%
+- Precision: 62.04%
+- Recall: 62.33%
+
+VISUALIZATIONS
 
 #### Model 4
 - Accuracy_Score 1
 - F1_score 1
 - BLAH
-
 #### Model 5
 - Accuracy_Score 1
 - F1_score 1
