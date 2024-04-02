@@ -38,20 +38,65 @@ Customer issue resolution is one of the most important facets in running a smoot
 
 ### Machine Learning Models Implemented
 
-#### Model 1: Latent Dirichlet Allocation (scikit-learn's LDA)
-These supervised models are well-suited for text classification tasks, offering high accuracy and robustness:
-- Support Vector Machine (scikit-learn's SVC)
-- XGBoost (xgboost library)
+#### Model 1- Unsupervised Learning: Latent Dirichlet Allocation (scikit-learn's LDA)
 
-Additionally, the following unsupervised methods are employed to identify latent topics and group similar complaints without the need for labeled data:
-- Latent Dirichlet Allocation (scikit-learn's LDA)
-- Clustering (scikit-learn's KMeans) 
+Why LDA?
+- Popular unsupervised model with usually good performance on NLP tasks as seen in our literature analysis on the topic.
+- Computationally efficient and can be scaled to handle billions of documents with minimal processing delay.
+- Can be tailored to a specific corpus and set of topics during the training phase, with little training time and corpora vs LLM.
+- LDA treats the per-document distribution as a latent variable that comes from a Dirichlet distribution allowing inference over a conjugate Dirichlet-Multinomial.
+- LDA can automatically infer the topics from the data, and assign each document a probability of belonging to each topic.
+
+#### Model 2- Unsupervised Learning: K-Means (scikit-learn's KMeans)
+
+Why KMeans?
+- Simple unsupervised model that can be used as a baseling to compare the performance of more complicared unsupervised models like LDA.
+- Low computation time.
+
+#### Model 3- Supervised Learning: <MODEL NAME>
+
+Why <MODEL NAME>?
+
+#### Model 4- Supervised Learning: <MODEL NAME>
+
+Why <MODEL NAME>?
+
+#### Model 5- Supervised Learning: <MODEL NAME>
+
+Why <MODEL NAME>?
 
 ## Results and Discussion
-- To evaluate the effectiveness of our proposed methodology, we will utilize quantitative metrics such as F1 score, accuracy, precision and recall.
-- Our project goals include achieving high accuracy in classifying complaints into their respective categories and ensuring balanced precision and recall across all labels.
-- Through rigorous evaluation of our methodology, we aim to develop a robust/generalizable solution for automated complaint tagging in the domain of customer service to enhance efficiency and improve customer satisfaction.
 
+Since the entire dataset is too large, we have limited our models to process and train on a shorter dataset of DATASET_SIZE_NUMBER records. Once we fine tune our approaches and have a solid baseline we plan to expand the model to train on the entire dataset of X_MILLION records for our final phase. 
+
+### Model Metrics
+
+#### Model 1
+- Accuracy_Score 1
+- F1_score 1
+- BLAH
+VISUALIZATIONS
+
+#### Model 2
+- Accuracy_Score 1
+- F1_score 1
+- BLAH
+VISUALIZATIONS
+
+#### Model 3
+- Accuracy_Score 1
+- F1_score 1
+- BLAH
+
+#### Model 4
+- Accuracy_Score 1
+- F1_score 1
+- BLAH
+
+#### Model 5
+- Accuracy_Score 1
+- F1_score 1
+- BLAH
 
 ## References
 
@@ -66,13 +111,13 @@ Additionally, the following unsupervised methods are employed to identify latent
  
 ## Contribution Table
 
-| Name    | Proposal Contributions |
-|---------|------------------------|
-| Divyansh Verma | Introduction and Problem Definition |
-| Rajani Goudar | Video Recording |
-| Harshit Alluri    | Github Page |
-| Jyothsna Karanam    | Methods, Results and Discussion  |
-| Nikita Agrawal    | Powerpoint Presentation |
+| Name             | Proposal Contributions |
+|---------         |------------------------|
+| Divyansh Verma   | NEED_TO_DISCUSS |
+| Rajani Goudar    | NEED_TO_DISCUSS |
+| Harshit Alluri   | NEED_TO_DISCUSS |
+| Jyothsna Karanam | NEED_TO_DISCUSS  |
+| Nikita Agrawal   | NEED_TO_DISCUSS |
 
 
 ## Gantt Chart
