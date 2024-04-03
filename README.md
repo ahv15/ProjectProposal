@@ -53,17 +53,17 @@ Why Random Forest?
 - In text classification tasks, where the presence of irrelevant words or misspellings is common, Random Forest can effectively handle noise in the data without significantly impacting its performance.
 - Reduces the risk of overfitting by averaging the predictions of multiple trees. By building multiple trees on random subsets of the data, Random Forest reduces the variance of the model and improves its generalization performance.
   
-#### Model 3- Supervised Learning: XGBoost (sklearn's XGBClassifier)
+#### Model 3- Supervised Learning: XGBoost (scikit-learn's XGBClassifier)
 
 Why XGBoost? 
 - Excellently handles sparse data, common in text-based features, making it ideal for text classification.
 - Utilizes advanced regularization (L1 and L2), gradient boosting, and tree pruning techniques to deliver highly accurate models, often outperforming other algorithms.
 - Scales efficiently across multiple CPUs and GPUs for fast training times and supports various types of predictive modeling problems, including multi-class classification.
 
-#### Model 4- Unsupervised Learning: KMeans Clustering (sklearn's KMeans)
+#### Model 4- Unsupervised Learning: KMeans Clustering (scikit-learn's KMeans)
 
 Why KMeans?
-- Simple unsupervised model that can be used as a baseline to compare the performance of more complicared unsupervised models like LDA.
+- Simple unsupervised model that can be used as a baseline to compare the performance of more complicated unsupervised models like LDA.
 - Low computation time.
 
 ## Results and Discussion
@@ -91,7 +91,7 @@ Clear evidence of data pollution, demonstrates the need for good data pre proces
 #### Popular words after data preprocessing:
 <img width="900" alt="Top 20 words after preprocessing" src="https://github.com/v-divyansh1/ProjectProposal/assets/157415627/9332a299-814f-4c1e-8413-73d12f6e704a">
 
-Reduced data pollution and more accurate represntation of popular words in the dataset.
+Reduced data pollution and more accurate representation of popular words in the dataset.
 
 #### Wordcloud after data preprocessing:
 <img width="900" alt="Word Cloud after preprocessing " src="https://github.com/v-divyansh1/ProjectProposal/assets/157415627/aaf5708b-76c6-4ebf-9aaa-b515b900634f">
@@ -106,6 +106,8 @@ Reduced data pollution and more accurate represntation of popular words in the d
 
 Confusion Matrix:
 ![SVM - confusion matrix](https://github.com/v-divyansh1/ProjectProposal/assets/157415627/5cdf3789-57d1-4440-9d9b-2bfb0d1af4a3)
+
+For a few labels that are similar ( eg label 1- credit card, label 2- credit card or prepaid card) the model is not able to differentiate them into the correct label. But as we can see, this is because the original labels have a lot of similarities and is not exclusive. This further supports our decision to merge similar labels into one category as outlined in the "Future Work" section.
 
 #### Model 2: Random Forest
 - Accuracy Score: 60.8%
@@ -124,6 +126,8 @@ Confusion Matrix:
 
 Confusion Matrix:
 ![Confusion_Matrix_XGB](https://github.com/v-divyansh1/ProjectProposal/assets/157415627/034b900d-2d2e-4a40-a6c5-effd79b3cd79)
+
+Confusion matrix indicates a varied performance across different categories. For example, the model performs exceptionally well with 'Mortgage' and 'Student loan', where the classes have high precision and recall, suggesting the model can reliably identify and classify complaints in these categories. In contrast, categories like 'Debt or credit management' and 'Other financial service' have very low recall, indicating these are often incorrectly classified as other types, which could be due to insufficient representative data or similarities with other categories that confuse the model. The high precision in some categories but lower in others, combined with a general trend of moderate recall across most classes, suggests the model has learned to distinguish between the most prevalent classes effectively, but it struggles with less common or more nuanced categories. This behavior could be improved with more balanced training data, feature engineering to capture nuanced differences, or model tuning to better handle class imbalance.
 
 #### Model 4: KMeans
 
