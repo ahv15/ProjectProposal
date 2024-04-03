@@ -101,8 +101,8 @@ Reduced data pollution and more accurate represntation of popular words in the d
 #### Model 1: SVM Classifier
 - Accuracy Score: 63.4%
 - F1 score: 62.6%
-- Precision:
-- Recall:
+- Precision: 63.0%
+- Recall: 63.4%
 
 Confusion Matrix:
 ![SVM - confusion matrix](https://github.com/v-divyansh1/ProjectProposal/assets/157415627/5cdf3789-57d1-4440-9d9b-2bfb0d1af4a3)
@@ -110,8 +110,8 @@ Confusion Matrix:
 #### Model 2: Random Forest
 - Accuracy Score: 60.8%
 - F1 score: 59.1%
-- Precision:
-- Recall:
+- Precision: 60.9%
+- Recall: 60.8%
 
 Confusion Matrix:
 ![RF - confusion matrix](https://github.com/v-divyansh1/ProjectProposal/assets/157415627/dd779b21-71fc-454a-b71b-1756b570f6c1)
@@ -135,6 +135,7 @@ PCA was performed on top 2 components for visualisation purposes. We chose 5 clu
 
 - Implementation of LDA unsupervised model and comparison of performance with KMeans.
 - Hyperparameter tuning of current models to get better accuracy metrics.
+- Accounting for skewed distribution of labels.
 - We noticed that few labels in the original dataset are very similar. Could look into merging them into one common label in order to reduce total classes and see if it improves performance. Eg: "Credit card or prepaid card" and "Credit Card" are very similar categories and can be merged as one. "Payday loan, title loan, or personal loan" and "Payday loan, title loan, personal loan, or advance loan" are very similar too.
 
 ## References
@@ -160,5 +161,6 @@ PCA was performed on top 2 components for visualisation purposes. We chose 5 clu
 
 
 ## Gantt Chart
-![Gantt_Chart](https://github.com/v-divyansh1/ProjectProposal/assets/157415627/4f02b7e1-9666-470d-ac0a-525047c3fa9a)
+![Gantt_Chart](https://github.com/v-divyansh1/ProjectProposal/assets/157415627/8de233a2-85e2-4eab-afcd-0e94476ef2d8)
+
 
