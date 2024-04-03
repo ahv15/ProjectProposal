@@ -159,7 +159,7 @@ PCA was performed on top 2 components for visualisation purposes. We chose 5 clu
 |---------         |------------------------|
 | Divyansh Verma   | EDA and Report |
 | Rajani Goudar    | SVM Model |
-| Harshit Alluri   | Data Preprocessing, Repo management |
+| Harshit Alluri   | Data Preprocessing, K-Means Model |
 | Jyothsna Karanam | XGBoost Model  |
 | Nikita Agrawal   | Random Forest Model |
 
