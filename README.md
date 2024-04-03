@@ -56,8 +56,9 @@ Why Random Forest?
 #### Model 3- Supervised Learning: XGBoost (sklearn's XGBClassifier)
 
 Why XGBoost? 
-- asd
-- 
+- Excellently handles sparse data, common in text-based features, making it ideal for text classification.
+- Utilizes advanced regularization (L1 and L2), gradient boosting, and tree pruning techniques to deliver highly accurate models, often outperforming other algorithms.
+- Scales efficiently across multiple CPUs and GPUs for fast training times and supports various types of predictive modeling problems, including multi-class classification.
 
 #### Model 4- Unsupervised Learning: KMeans Clustering (sklearn's KMeans)
 
@@ -69,6 +70,32 @@ Why KMeans?
 
 Since the entire dataset is too large, we have limited our models to process and train on a shorter dataset of 10000 records of each category. 
 
+### Exploratory Data Analysis (EDA)
+
+#### Distribution of Labels in the dataset:
+<img width="900" alt="Distribution - Labels" src="https://github.com/v-divyansh1/ProjectProposal/assets/157415627/2b9c336e-8261-4954-a920-65ad81d2176d">
+
+#### Distribution of length of customer complaint:
+<img width="900" alt="Distribution - Length of Comment" src="https://github.com/v-divyansh1/ProjectProposal/assets/157415627/d2317b08-7e12-474a-8225-e9a60052e7e6">
+
+This analysis could later on help us choose models for classification that might be limited by the length of text it can accept per comment. (Popular example: BERT, limited to 512 tokens)
+
+#### Popular words before data preprocessing:
+<img width="900" alt="Top 20 words pre - preprocessing" src="https://github.com/v-divyansh1/ProjectProposal/assets/157415627/39fc1463-a98a-4d8c-848a-b0a947e44bf0">
+
+Clear evidence of data pollution, demonstrates the need for good data pre processing methods.
+
+#### Wordcloud before data preprocessing:
+<img width="900" alt="Word Cloud pre - preprocessing " src="https://github.com/v-divyansh1/ProjectProposal/assets/157415627/f4afd1b9-0023-4f6a-bb8e-4faad883d2ca">
+
+#### Popular words after data preprocessing:
+<img width="900" alt="Top 20 words after preprocessing" src="https://github.com/v-divyansh1/ProjectProposal/assets/157415627/9332a299-814f-4c1e-8413-73d12f6e704a">
+
+Reduced data pollution and more accurate represntation of popular words in the dataset.
+
+#### Wordcloud after data preprocessing:
+<img width="900" alt="Word Cloud after preprocessing " src="https://github.com/v-divyansh1/ProjectProposal/assets/157415627/aaf5708b-76c6-4ebf-9aaa-b515b900634f">
+
 ### Model Metrics
 
 #### Model 1: SVM Classifier
@@ -77,7 +104,8 @@ Since the entire dataset is too large, we have limited our models to process and
 - Precision:
 - Recall:
 
-VISUALIZATIONS
+Confusion Matrix:
+![SVM - confusion matrix](https://github.com/v-divyansh1/ProjectProposal/assets/157415627/5cdf3789-57d1-4440-9d9b-2bfb0d1af4a3)
 
 #### Model 2: Random Forest
 - Accuracy Score: 60.8%
@@ -85,7 +113,8 @@ VISUALIZATIONS
 - Precision:
 - Recall:
 
-VISUALIZATIONS
+Confusion Matrix:
+![RF - confusion matrix](https://github.com/v-divyansh1/ProjectProposal/assets/157415627/dd779b21-71fc-454a-b71b-1756b570f6c1)
 
 #### Model 3: XGBoost Classifier
 - Accuracy Score: 62.0%
@@ -93,16 +122,20 @@ VISUALIZATIONS
 - Precision: 62.04%
 - Recall: 62.33%
 
-VISUALIZATIONS
+Confusion Matrix:
+![Confusion_Matrix_XGB](https://github.com/v-divyansh1/ProjectProposal/assets/157415627/034b900d-2d2e-4a40-a6c5-effd79b3cd79)
 
-#### Model 4
-- Accuracy_Score 1
-- F1_score 1
-- BLAH
-#### Model 5
-- Accuracy_Score 1
-- F1_score 1
-- BLAH
+#### Model 4: KMeans
+
+PCA was performed on top 2 components for visualisation purposes. We chose 5 clusters for now.
+
+![KMEANS_MIDTERM](https://github.com/v-divyansh1/ProjectProposal/assets/157415627/ce3a302f-a161-4025-a897-02f04ac1cea1)
+
+### Future Work
+
+- Implementation of LDA unsupervised model and comparison of performance with KMeans.
+- Hyperparameter tuning of current models to get better accuracy metrics.
+- We noticed that few labels in the original dataset are very similar. Could look into merging them into one common label in order to reduce total classes and see if it improves performance. Eg: "Credit card or prepaid card" and "Credit Card" are very similar categories and can be merged as one. "Payday loan, title loan, or personal loan" and "Payday loan, title loan, personal loan, or advance loan" are very similar too.
 
 ## References
 
@@ -119,12 +152,13 @@ VISUALIZATIONS
 
 | Name             | Proposal Contributions |
 |---------         |------------------------|
-| Divyansh Verma   | NEED_TO_DISCUSS |
-| Rajani Goudar    | NEED_TO_DISCUSS |
-| Harshit Alluri   | NEED_TO_DISCUSS |
-| Jyothsna Karanam | NEED_TO_DISCUSS  |
-| Nikita Agrawal   | NEED_TO_DISCUSS |
+| Divyansh Verma   | EDA and Report |
+| Rajani Goudar    | SVM Model |
+| Harshit Alluri   | Data Preprocessing, Repo management |
+| Jyothsna Karanam | XGBoost Model  |
+| Nikita Agrawal   | Random Forest Model |
 
 
 ## Gantt Chart
-![GanttChart](https://github.com/ahv15/ProjectProposal/assets/52852877/3e26cf00-b6f4-4e1a-aa1c-830bc0cafb4c)
+![Gantt_Chart](https://github.com/v-divyansh1/ProjectProposal/assets/157415627/4f02b7e1-9666-470d-ac0a-525047c3fa9a)
+
