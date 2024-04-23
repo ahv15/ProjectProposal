@@ -36,6 +36,12 @@ Customer issue resolution is one of the most important facets in running a smoot
 - Performed Principal Component Analysis to reduce the articles to 2 dimensions only for visualization purposes. 
 - Used this approach for our KMeans __unsupervised__ model. 
 
+#### Removing label redundancy:
+- As noted in our midterm report, we had a lot of redundant labels that had a lot of overlap and confused the models, dropping their accuracy. So after inspecting the confusion matrix we found labels that were similar and had a lot of overlap and combined them as one distinct label. Performing this provdied a blanket accuracy increase of ~10% for all our models.
+### Sample confusion matrix for MODEL_NAME model before and after removing label redundancy:
+<INSERT IMAGES HERE>
+
+
 ### Machine Learning Models Implemented
 
 #### Model 1- Supervised Learning: Support Vector Machine (scikit-learn's SVM)
@@ -157,11 +163,11 @@ PCA was performed on top 2 components for visualisation purposes. We chose 5 clu
 
 | Name             | Proposal Contributions |
 |---------         |------------------------|
-| Divyansh Verma   | EDA and Report |
-| Rajani Goudar    | SVM Model |
-| Harshit Alluri   | Data Preprocessing, K-Means Model |
-| Jyothsna Karanam | XGBoost Model  |
-| Nikita Agrawal   | Random Forest Model |
+| Divyansh Verma   | LDA feature reduction and Report |
+| Rajani Goudar    | LDA Model data cleaning and all models optimization |
+| Harshit Alluri   | LDA unsupervised model Selection, Design and Implementation |
+| Jyothsna Karanam | LDA unsupervised model testing evaluation and Video creation and recording  |
+| Nikita Agrawal   | Reducing label redundancy and All models comparison |
 
 
 ## Gantt Chart
