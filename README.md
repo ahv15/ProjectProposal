@@ -37,9 +37,7 @@ Customer issue resolution is one of the most important facets in running a smoot
 - Used this approach for our KMeans __unsupervised__ model. 
 
 #### Removing label redundancy:
-- As noted in our midterm report, we had a lot of redundant labels that had a lot of overlap and confused the models, dropping their accuracy. So after inspecting the confusion matrix we found labels that were similar and had a lot of overlap and combined them as one distinct label. Performing this provdied a blanket accuracy increase of ~10% for all our models.
-### Sample confusion matrix for MODEL_NAME model before and after removing label redundancy:
-<INSERT IMAGES HERE>
+- As noted in our midterm report, we had a lot of redundant labels that had a lot of overlap and confused the models, dropping their accuracy. So after inspecting the confusion matrix we found labels that were similar and had a lot of overlap and combined them as one distinct label. Performing this provdied a blanket accuracy increase of ~10% for all our models. We investigate the confusion matrices before and after for each model in the model metrics section to get a better understanding.
 
 
 ### Machine Learning Models Implemented
@@ -69,6 +67,12 @@ Why XGBoost?
 #### Model 4- Unsupervised Learning: KMeans Clustering (scikit-learn's KMeans)
 
 Why KMeans?
+- Simple unsupervised model that can be used as a baseline to compare the performance of more complicated unsupervised models like LDA.
+- Low computation time.
+
+#### Model 5- Unsupervised Learning: Latent Dirichlet Analysis (scikit-learn's LDA)
+
+Why LDA?
 - Simple unsupervised model that can be used as a baseline to compare the performance of more complicated unsupervised models like LDA.
 - Low computation time.
 
