@@ -213,10 +213,10 @@ Top words from each cluster can represent a topic (financial service for our use
 
 | Name             | Proposal Contributions |
 |---------         |------------------------|
-| Divyansh Verma   | LDA feature reduction and Report |
-| Rajani Goudar    | LDA Model data cleaning and all models optimization |
+| Divyansh Verma   | Final Report creation |
+| Rajani Goudar    | Reducing label redundancy and All models comparison |
 | Harshit Alluri   | LDA unsupervised model Selection, Design and Implementation |
-| Jyothsna Karanam | LDA unsupervised model testing evaluation and Video creation and recording  |
+| Jyothsna Karanam | Video creation and recording  |
 | Nikita Agrawal   | Reducing label redundancy and All models comparison |
 
 
