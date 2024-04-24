@@ -37,7 +37,7 @@ Customer issue resolution is one of the most important facets in running a smoot
 - Used this approach for our KMeans __unsupervised__ model. 
 
 #### Removing label redundancy:
-- As noted in our midterm report, we had a lot of redundant labels that had a lot of overlap and confused the models, dropping their accuracy. So after inspecting the confusion matrix we found labels that were similar and had a lot of overlap and combined them as one distinct label. Performing this provdied a blanket accuracy increase of ~10% for all our models. We investigate the confusion matrices before and after for each model in the model metrics section to get a better understanding.
+- As noted in our midterm report, we had a lot of redundant labels that had a lot of overlap and confused the models, dropping their accuracy. So after inspecting the confusion matrix we found labels that were similar and had a lot of overlap and combined them as one distinct label. Performing this provdied a blanket accuracy increase of ~10% for all our models. We investigate the confusion matrices before and after for each model in the model metrics section to get a better understanding. We reduced unique labels from 23 down to 13 unique labels.
 
 
 ### Machine Learning Models Implemented
@@ -192,7 +192,11 @@ Top words from each cluster can represent a topic (financial service for our use
 ![LDA_CLusters1](https://github.com/v-divyansh1/ProjectProposal/assets/157415627/5337d84c-3947-499e-9c12-e638c3e52697)
 ![LDA_Clusters2](https://github.com/v-divyansh1/ProjectProposal/assets/157415627/2ef249be-881b-4734-a9a8-d16007dd5961)
 
-
+### Model 
+- SVMs work best for high-dimensional feature spaces, making them suitable for NLP tasks where feature dimensions are large. However, they struggle with large datasets due to scalability issues, and they require careful parameter tuning, which can be challenging due to the huge size of data. In our project as well, we can see that SVM shows the highest accuracy score. 
+-	RF's ensemble approach can capture complex relationships in text data where feature interactions are important. However, they may lack interpretability compared to SVMs, and training time can be significant for large datasets. 
+-	XGBoost's high performance and built-in regularization techniques make it a good choice, especially when feature importance and generalization are crucial. That is why, it shows a high accuracy score. However just like SVM, it takes a long time to train and requires careful hyperparameter tuning.
+   
 ### Future Work
 
 - Hyperparameter tuning of current models to get better accuracy metrics. Even with current smaller sized dataset tuning takes infeasibly long and would require more advanced resources which can be picked up in the future.
@@ -211,7 +215,7 @@ Top words from each cluster can represent a topic (financial service for our use
  
 ## Contribution Table
 
-| Name             | Proposal Contributions |
+| Name             | Final Report Contributions |
 |---------         |------------------------|
 | Divyansh Verma   | Final Report creation |
 | Rajani Goudar    | Reducing label redundancy and All models comparison |
