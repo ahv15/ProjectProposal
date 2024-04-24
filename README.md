@@ -70,11 +70,12 @@ Why KMeans?
 - Simple unsupervised model that can be used as a baseline to compare the performance of more complicated unsupervised models like LDA.
 - Low computation time.
 
-#### Model 5- Unsupervised Learning: Latent Dirichlet Analysis (scikit-learn's LDA)
+#### Model 5- Unsupervised Learning: Latent Dirichlet Analysis (gensim model's LdaModel)
 
 Why LDA?
-- Simple unsupervised model that can be used as a baseline to compare the performance of more complicated unsupervised models like LDA.
-- Low computation time.
+- Generative soft clustering approach especially relevant for text analysis.
+- Documents are represented as a mixture of topics where a topic is a bunch of words. Topics are considered as latent variables as the topics are inferred from observed document-word frequencies. Hence, LDA looks at a document to determine a set of topics that are likely to have generated that collection of words.
+- Output of LDA could be used in implementing an automated chatbot for customer care purposes where form the uesr's prompt it infers the topic (financial service in our case) and provides targeted help for the financial service.
 
 ## Results and Discussion
 
@@ -82,8 +83,12 @@ Since the entire dataset is too large, we have limited our models to process and
 
 ### Exploratory Data Analysis (EDA)
 
-#### Distribution of Labels in the dataset:
+#### Distribution of Labels in the dataset before combining:
 <img width="900" alt="Distribution - Labels" src="https://github.com/v-divyansh1/ProjectProposal/assets/157415627/2b9c336e-8261-4954-a920-65ad81d2176d">
+
+#### Distribution of Labels in the dataset after combining:
+![label_distribution_after_combining](https://github.com/v-divyansh1/ProjectProposal/assets/157415627/367bfc4e-67dc-448f-a8ea-896dd1b45f93)
+
 
 #### Distribution of length of customer complaint:
 <img width="900" alt="Distribution - Length of Comment" src="https://github.com/v-divyansh1/ProjectProposal/assets/157415627/d2317b08-7e12-474a-8225-e9a60052e7e6">
@@ -109,24 +114,48 @@ Reduced data pollution and more accurate representation of popular words in the 
 ### Model Metrics
 
 #### Model 1: SVM Classifier
+
+Before combining labels:
 - Accuracy Score: 63.4%
 - F1 score: 62.6%
 - Precision: 63.0%
 - Recall: 63.4%
 
-Confusion Matrix:
+After combining labels:
+- Accuracy: 74.8%
+- F1 Score: 74.3%
+- Precision: 74.2%
+- Recall: 74.8%
+
+Confusion Matrix before combining labels:
 ![SVM - confusion matrix](https://github.com/v-divyansh1/ProjectProposal/assets/157415627/5cdf3789-57d1-4440-9d9b-2bfb0d1af4a3)
 
-For a few labels that are similar ( eg label 1- credit card, label 2- credit card or prepaid card) the model is not able to differentiate them into the correct label. But as we can see, this is because the original labels have a lot of similarities and is not exclusive. This further supports our decision to merge similar labels into one category as outlined in the "Future Work" section.
+Confusion Matrix after combining labels:
+![new_RF_conf](https://github.com/v-divyansh1/ProjectProposal/assets/157415627/3fcfe07f-7629-4c68-810f-c0cc4597110c)
+
+We can see a drastic reduction in misclassification in before and after. Now our model is able to classify more accurately.
 
 #### Model 2: Random Forest
+
+Before combining labels:
 - Accuracy Score: 60.8%
 - F1 score: 59.1%
 - Precision: 60.9%
 - Recall: 60.8%
 
-Confusion Matrix:
+After combining labels:
+- Accuracy: 70.8%
+- F1 Score: 68.8%
+- Precision: 69.3%
+- Recall: 70.8%
+
+Confusion Matrix before combining labels:
 ![RF - confusion matrix](https://github.com/v-divyansh1/ProjectProposal/assets/157415627/dd779b21-71fc-454a-b71b-1756b570f6c1)
+
+Confusion Matrix after combining labels:
+![new_RF_conf](https://github.com/v-divyansh1/ProjectProposal/assets/157415627/29855ab5-40eb-492a-9f71-4e7f4ea20888)
+
+We can see a drastic reduction in misclassification in before and after. Now our model is able to classify more accurately.
 
 #### Model 3: XGBoost Classifier
 - Accuracy Score: 62.0%
@@ -134,10 +163,13 @@ Confusion Matrix:
 - Precision: 62.04%
 - Recall: 62.33%
 
-Confusion Matrix:
+Confusion Matrix before combining labels:
 ![Confusion_Matrix_XGB](https://github.com/v-divyansh1/ProjectProposal/assets/157415627/034b900d-2d2e-4a40-a6c5-effd79b3cd79)
 
-Confusion matrix indicates a varied performance across different categories. For example, the model performs exceptionally well with 'Mortgage' and 'Student loan', where the classes have high precision and recall, suggesting the model can reliably identify and classify complaints in these categories. In contrast, categories like 'Debt or credit management' and 'Other financial service' have very low recall, indicating these are often incorrectly classified as other types, which could be due to insufficient representative data or similarities with other categories that confuse the model. The high precision in some categories but lower in others, combined with a general trend of moderate recall across most classes, suggests the model has learned to distinguish between the most prevalent classes effectively, but it struggles with less common or more nuanced categories. This behavior could be improved with more balanced training data, feature engineering to capture nuanced differences, or model tuning to better handle class imbalance.
+Confusion Matrix after combining labels:
+
+
+We can see a drastic reduction in misclassification in before and after. Now our model is able to classify more accurately.
 
 #### Model 4: KMeans
 
@@ -145,12 +177,16 @@ PCA was performed on top 2 components for visualisation purposes. We chose 5 clu
 
 ![KMEANS_MIDTERM](https://github.com/v-divyansh1/ProjectProposal/assets/157415627/ce3a302f-a161-4025-a897-02f04ac1cea1)
 
+#### Model 5: LDA
+
+Top words from each cluster can represent a topic (financial service for our use case).
+![LDA_CLusters1](https://github.com/v-divyansh1/ProjectProposal/assets/157415627/5337d84c-3947-499e-9c12-e638c3e52697)
+![LDA_Clusters2](https://github.com/v-divyansh1/ProjectProposal/assets/157415627/2ef249be-881b-4734-a9a8-d16007dd5961)
+
+
 ### Future Work
 
-- Implementation of LDA unsupervised model and comparison of performance with KMeans.
-- Hyperparameter tuning of current models to get better accuracy metrics.
-- Accounting for skewed distribution of labels.
-- We noticed that few labels in the original dataset are very similar. Could look into merging them into one common label in order to reduce total classes and see if it improves performance. Eg: "Credit card or prepaid card" and "Credit Card" are very similar categories and can be merged as one. "Payday loan, title loan, or personal loan" and "Payday loan, title loan, personal loan, or advance loan" are very similar too.
+- Hyperparameter tuning of current models to get better accuracy metrics. Even with current smaller sized dataset tuning takes infeasibly long and would require more advanced resources which can be picked up in the future.
 
 ## References
 
