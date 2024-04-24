@@ -187,6 +187,7 @@ Top words from each cluster can represent a topic (financial service for our use
 ### Future Work
 
 - Hyperparameter tuning of current models to get better accuracy metrics. Even with current smaller sized dataset tuning takes infeasibly long and would require more advanced resources which can be picked up in the future.
+- Investigation with unsupervised models if we are able to uncover behavioral patterns based on words within cluster used for each financial product. Could help in redesign and design of old and new products.
 
 ## References
 
