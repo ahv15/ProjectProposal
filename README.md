@@ -158,15 +158,24 @@ Confusion Matrix after combining labels:
 We can see a drastic reduction in misclassification in before and after. Now our model is able to classify more accurately.
 
 #### Model 3: XGBoost Classifier
+
+Before combining labels:
 - Accuracy Score: 62.0%
 - F1 score: 61.7%
-- Precision: 62.04%
-- Recall: 62.33%
+- Precision: 62%
+- Recall: 62.3%
+
+After combining labels:
+- Accuracy Score: 74.3%
+- F1 score: 73.6%
+- Precision: 73.5%
+- Recall: 74.3%
 
 Confusion Matrix before combining labels:
 ![Confusion_Matrix_XGB](https://github.com/v-divyansh1/ProjectProposal/assets/157415627/034b900d-2d2e-4a40-a6c5-effd79b3cd79)
 
 Confusion Matrix after combining labels:
+![xgboost_after_combining_confusion_matrix](https://github.com/ahv15/ProjectProposal/assets/157415627/b0beec6f-ffd1-44b8-8f22-c7a64e92b81c)
 
 
 We can see a drastic reduction in misclassification in before and after. Now our model is able to classify more accurately.
