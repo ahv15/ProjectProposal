@@ -221,7 +221,8 @@ Top words from each cluster can represent a topic (financial service for our use
 
 
 ## Gantt Chart
-![Final_gantt_chart](https://github.com/ahv15/ProjectProposal/assets/157415627/a89cd29e-22b9-432d-9567-5d73690ab85d)
+![Gantt_Chart_final](https://github.com/ahv15/ProjectProposal/assets/157415627/cd183090-5827-45d2-9ae5-333ad475c824)
+
 
 
 
